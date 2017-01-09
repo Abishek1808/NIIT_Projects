@@ -1,0 +1,32 @@
+import java.util.*;
+public class Prime {
+	public static void main(String args[]){
+		Scanner num=new Scanner(System.in);
+		int n,x=1,t=3,z=3;
+		System.out.println("Enter the number of prime numbers to be printed:");
+		n=num.nextInt();
+		if(n>1)
+		{
+			System.out.println("The Series:");
+			System.out.println(2);
+		}
+		for(int i=2;i<=n;)
+		{
+			for(int j=2;j<=Math.sqrt(z);j++)
+			{
+				if(z%j==0)
+				{
+					x=0;
+					break;
+				}
+			}
+			if(x!=0)
+			{
+				System.out.println(z);
+				i++;
+			}
+			x=1;
+			z++;
+		}
+}
+}
