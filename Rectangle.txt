@@ -1,0 +1,43 @@
+ import java.util.*;
+public class Rectangle {
+    public static void main(String[] args) {
+        int length = 0;
+        int width = 0;
+        char b;
+        char ch = 0;
+        Scanner Keyboard = new Scanner(System.in);
+        do {
+            System.out.print("Enter  length and width values (!=  0) for a filled rectangle.");
+            System.out.print("\nEnter the length of the rectangle(+1 to +10):");
+            length = Keyboard.nextInt();
+            while (length < 1 || length > 10) {
+                System.out.print("Input Error --------");
+                System.out.print("\nEnter the length of the rectangle(+1 to +10):");
+                length = Keyboard.nextInt();
+            }
+            System.out.print("Enter the width of the rectangle(+1 to +10):");
+            width = Keyboard.nextInt();
+            while (width < 1 || width > 10) {
+                System.out.print("Input Error ----------");
+                System.out.print("\nEnter the width of the rectangle(+1 to +10):");
+              width = Keyboard.nextInt();
+            }
+            System.out.print("Enter the symbol to be used:");
+            b = Keyboard.next().charAt(0);
+            for (int x = 0; x < width; x++) {
+                for (int y = 0; y < length; y++) {
+                    
+                        if ((x > 0 && x < length - 1) && (y > 0 && y < width - 1)) {
+                            System.out.print(" ");
+                        } else {
+                            System.out.print(b + " ");
+                        }
+                    
+                   
+                }System.out.println();
+           }
+            System.out.print("Do you want another rectangle,Yes or No:");
+            ch = Keyboard.next().charAt(0);
+        } while (ch == 'y');
+    }
+}
