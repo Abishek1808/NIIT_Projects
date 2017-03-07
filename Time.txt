@@ -1,0 +1,18 @@
+package url;
+//Program to display time using API key obtained from thingspeak.com
+import java.net.*;
+import java.io.*;
+
+public class Time {
+    public static void main(String[] args) throws Exception {
+
+        URL oracle = new URL("https://api.thingspeak.com/apps/thinghttp/send_request?api_key=Y0QH7O9I3WZZZ5PF");
+        BufferedReader in = new BufferedReader(
+        new InputStreamReader(oracle.openStream()));
+
+        String inputLine;
+        while ((inputLine = in.readLine()) != null)
+            System.out.println(inputLine);
+        in.close();
+    }
+}
